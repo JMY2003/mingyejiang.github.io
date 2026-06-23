@@ -1,6 +1,6 @@
 # 姜明烨个人 GitHub Pages
 
-这是一个纯静态个人主页，部署在 GitHub Pages：
+这是一个纯静态简历页面，当前部署在 GitHub Pages：
 
 ```text
 https://jmy2003.github.io/mingyejiang.github.io/
@@ -11,16 +11,24 @@ https://jmy2003.github.io/mingyejiang.github.io/
 - `index.html`: 个人主页
 - `assets/profile.jpg`: 页面头像/首屏照片
 - `assets/resume.pdf`: 原始简历 PDF
+- `CNAME`: 目标自定义域名配置
 
-## 部署方式
+## 关于目标网址
 
-1. 新建一个 GitHub 仓库，例如 `mingyejiang.github.io` 或任意项目仓库。
-2. 将本文件夹内容推送到仓库根目录。
-3. 在 GitHub 仓库的 `Settings -> Pages` 中选择 `Deploy from a branch`。
-4. 选择 `main` 分支和 `/root` 目录后保存。
+目标网址：
 
-当前仓库是普通项目仓库，页面通常会发布到：
+```text
+https://mingyejiang.github.io/
+```
+
+如果要使用这个 GitHub Pages 根网址，GitHub 的 owner 需要是 `mingyejiang`，并且仓库名需要是 `mingyejiang.github.io`。
+
+如果继续使用 `JMY2003/mingyejiang.github.io`，它默认是项目页：
 
 ```text
 https://JMY2003.github.io/mingyejiang.github.io/
 ```
+
+## 关于私有仓库
+
+GitHub Pages 在私有仓库发布需要 GitHub Pro、GitHub Team、GitHub Enterprise Cloud 或 GitHub Enterprise Server。仓库可见性需要在 GitHub 仓库 `Settings -> General -> Danger Zone -> Change repository visibility` 中修改。
