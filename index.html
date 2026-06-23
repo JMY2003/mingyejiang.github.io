@@ -514,7 +514,7 @@
             <ul class="contact" id="contact"></ul>
             <div class="actions">
               <a class="button primary" id="emailButton" href="mailto:mingyejiang@foxmail.com"></a>
-              <a class="button secondary" id="downloadButton" href="assets/resume.pdf" download></a>
+              <a class="button secondary" id="downloadButton" href="assets/resume.pdf" target="_blank" rel="noreferrer"></a>
             </div>
           </div>
           <div class="photo">
@@ -541,7 +541,7 @@
           contact: ["男", "在校生", "共青团员", "现居广州", "(+86)15773982990", "mingyejiang@foxmail.com"],
           actions: {
             email: "邮件联系",
-            download: "下载PDF",
+            viewPdf: "查看PDF",
           },
           sections: [
             {
@@ -671,7 +671,7 @@
           contact: ["Male", "Current Postgraduate Student", "Member, Communist Youth League", "Guangzhou, China", "(+86)15773982990", "mingyejiang@foxmail.com"],
           actions: {
             email: "Email",
-            download: "Download PDF",
+            viewPdf: "View PDF",
           },
           sections: [
             {
@@ -888,7 +888,7 @@
         document.getElementById("summary").replaceChildren(...data.summary.map((item) => el("span", { text: item })));
         document.getElementById("contact").replaceChildren(...data.contact.map((item) => el("li", { text: item })));
         document.getElementById("emailButton").textContent = data.actions.email;
-        document.getElementById("downloadButton").textContent = data.actions.download;
+        document.getElementById("downloadButton").textContent = data.actions.viewPdf;
 
         const tabs = document.getElementById("partTabs");
         const panels = document.getElementById("partPanels");
