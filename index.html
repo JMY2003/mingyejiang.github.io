@@ -279,6 +279,44 @@
         font-weight: 850;
       }
 
+      .part-tabs {
+        margin-top: 30px;
+      }
+
+      .part-tabs > .tab-strip {
+        padding: 10px 10px 0;
+      }
+
+      .part-tabs > .tab-strip .tab-button {
+        min-width: 128px;
+        text-align: center;
+      }
+
+      .part-tabs > .tab-strip .tab-title {
+        font-size: 15px;
+      }
+
+      .entry-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .entry {
+        display: grid;
+        grid-template-columns: 152px minmax(0, 1fr);
+        gap: 18px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+      }
+
+      .entry-time {
+        color: var(--blue);
+        font-size: 14px;
+        font-weight: 850;
+      }
+
       .lines {
         display: grid;
         gap: 6px;
@@ -370,6 +408,12 @@
         .tab-panel {
           padding: 17px;
         }
+
+        .entry {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          padding: 14px;
+        }
       }
     </style>
   </head>
@@ -401,156 +445,161 @@
           </div>
         </header>
 
-        <section>
-          <h2>教育经历</h2>
-          <div class="tab-shell" data-tabs>
-            <div class="tab-strip" role="tablist" aria-label="教育经历">
-              <button class="tab-button" type="button" role="tab" aria-selected="true" aria-controls="edu-1" id="edu-tab-1">
-                <span class="tab-title">中山大学</span>
-                <span class="tab-time">2025/09 - 2027/06</span>
-              </button>
-              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="edu-2" id="edu-tab-2">
-                <span class="tab-title">华南理工大学</span>
-                <span class="tab-time">2021/09 - 2025/06</span>
-              </button>
-            </div>
-            <div class="tab-panel active" role="tabpanel" id="edu-1" aria-labelledby="edu-tab-1">
-              <h3>中山大学 硕士 - 应用统计</h3>
-              <ul class="lines">
-                <li><span class="label">学院：</span>数学学院</li>
-                <li><span class="label">专业：</span>应用统计</li>
-                <li><span class="label">专业方向：</span>深度学习，大语言模型</li>
-                <li><span class="label">相关课程：</span>人工智能算法选讲；机器学习与数据挖掘；数据分析高级编程；统计推断；回归分析，算法设计...</li>
-              </ul>
-            </div>
-            <div class="tab-panel" role="tabpanel" id="edu-2" aria-labelledby="edu-tab-2">
-              <h3>华南理工大学 本科 - 数学与应用数学&自动化双学位</h3>
-              <ul class="lines">
-                <li><span class="label">学院：</span>数学学院</li>
-                <li><span class="label">专业：</span>数学与应用数学（主修）；自动化（辅修）</li>
-                <li><span class="label">毕设方向：</span>分布式优化</li>
-                <li><span class="label">相关课程：</span>数学分析；高等代数；概率论；数理统计；C++语言与程序设计；数据结构与算法；模电；数电；数学建模；自控原理；人工智能；微型计算机系统与应用...</li>
-              </ul>
-            </div>
+        <div class="tab-shell part-tabs" data-tabs>
+          <div class="tab-strip" role="tablist" aria-label="简历模块">
+            <button class="tab-button" type="button" role="tab" aria-selected="true" aria-controls="part-education" id="part-tab-education">
+              <span class="tab-title">教育经历</span>
+            </button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="part-projects" id="part-tab-projects">
+              <span class="tab-title">项目经历</span>
+            </button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="part-work" id="part-tab-work">
+              <span class="tab-title">工作经历</span>
+            </button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="part-skills" id="part-tab-skills">
+              <span class="tab-title">技能</span>
+            </button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="part-awards" id="part-tab-awards">
+              <span class="tab-title">获奖记录</span>
+            </button>
           </div>
-        </section>
 
-        <section>
-          <h2>项目经历</h2>
-          <div class="tab-shell" data-tabs>
-            <div class="tab-strip" role="tablist" aria-label="项目经历">
-              <button class="tab-button" type="button" role="tab" aria-selected="true" aria-controls="project-1" id="project-tab-1">
-                <span class="tab-title">Golden Template</span>
-                <span class="tab-time">2026/05 - 至今</span>
-              </button>
-              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="project-2" id="project-tab-2">
-                <span class="tab-title">Agentic RAG</span>
-                <span class="tab-time">2026/03 - 2026/05</span>
-              </button>
-              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="project-3" id="project-tab-3">
-                <span class="tab-title">竞品对比分析</span>
-                <span class="tab-time">2026/03 - 2026/04</span>
-              </button>
-              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="project-4" id="project-tab-4">
-                <span class="tab-title">分布式优化</span>
-                <span class="tab-time">2024/10-2025/6</span>
-              </button>
+          <section class="tab-panel active" role="tabpanel" id="part-education" aria-labelledby="part-tab-education">
+            <h2>教育经历</h2>
+            <div class="entry-list">
+              <article class="entry">
+                <div class="entry-time">2025/09 - 2027/06</div>
+                <div>
+                  <h3>中山大学 硕士 - 应用统计</h3>
+                  <ul class="lines">
+                    <li><span class="label">学院：</span>数学学院</li>
+                    <li><span class="label">专业：</span>应用统计</li>
+                    <li><span class="label">专业方向：</span>深度学习，大语言模型</li>
+                    <li><span class="label">相关课程：</span>人工智能算法选讲；机器学习与数据挖掘；数据分析高级编程；统计推断；回归分析，算法设计...</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="entry">
+                <div class="entry-time">2021/09 - 2025/06</div>
+                <div>
+                  <h3>华南理工大学 本科 - 数学与应用数学&自动化双学位</h3>
+                  <ul class="lines">
+                    <li><span class="label">学院：</span>数学学院</li>
+                    <li><span class="label">专业：</span>数学与应用数学（主修）；自动化（辅修）</li>
+                    <li><span class="label">毕设方向：</span>分布式优化</li>
+                    <li><span class="label">相关课程：</span>数学分析；高等代数；概率论；数理统计；C++语言与程序设计；数据结构与算法；模电；数电；数学建模；自控原理；人工智能；微型计算机系统与应用...</li>
+                  </ul>
+                </div>
+              </article>
             </div>
-            <div class="tab-panel active" role="tabpanel" id="project-1" aria-labelledby="project-tab-1">
-              <div class="panel-head">
-                <h3>Golden Template 网络配置智能校验运维系统</h3>
-                <span class="side-note">方向：LLM Agent</span>
-              </div>
-              <p>Golden Template 是华为面向网络配置智能校验与运维场景打造的平台，旨在通过规则化、自动化的方式提升网络配置检查效率与运维质量。本人为系统设计并打造了 Nora 智能助手（Network Orchestration & Rules Agent）。Nora 基于自然语言理解能力，能够将用户的运维诉求自动解析为结构化规则，支持规则的生成、修改、保存、管理与调用，并可联动系统内既有资源完成配置校验任务。该助手显著降低了网络工程师编写校验规则、执行配置检查和维护规则资产的复杂度，提升了平台的易用性与自动化水平。</p>
-            </div>
-            <div class="tab-panel" role="tabpanel" id="project-2" aria-labelledby="project-tab-2">
-              <div class="panel-head">
-                <h3>基于Agentic RAG的网络配置翻译与生成系统</h3>
-                <span class="side-note">方向：LLM Agent</span>
-              </div>
-              <p>作为团队核心成员，为配置翻译与生成场景打造了一套超高准确度的agentic RAG工具，用于华为与思科设备等配置命令手册检索与生成，实测检索准确率超过98%，远高于传统基于embedding的检索（准确度低于90%，完全无法处理相似的命令），目前该系统硬件在Cisco to huawei配置文件翻译，路由网络配置文件生成，故障注入，网络世界模型等项目中上线应用。</p>
-            </div>
-            <div class="tab-panel" role="tabpanel" id="project-3" aria-labelledby="project-tab-3">
-              <div class="panel-head">
-                <h3>基于multi-agent的竞品对比分析系统</h3>
-                <span class="side-note">方向：LLM Agent</span>
-              </div>
-              <p>本人设计并实现了一个面向通用市场情报研究的多 Agent 竞品分析平台，支持用户输入品类与分析目标后，自动完成任务理解、竞品发现、信息源规划、网页搜索与抓取、结构化信息抽取、证据链构建、多维竞品分析、质量审查和报告生成。支持DAG 可视化、证据库、报告编辑与导出。实现了一个可追溯、可复核、可导出的自动化竞品分析与对比流程。</p>
-            </div>
-            <div class="tab-panel" role="tabpanel" id="project-4" aria-labelledby="project-tab-4">
-              <div class="panel-head">
-                <h3>事件触发通信下的分布式优化研究</h3>
-                <span class="side-note">方向：优化理论</span>
-              </div>
-              <p>重点研究了分布式梯度跟踪方法。针对无向连通网络下的DIGing算法，我提出了一种改进型事件触发机制，得到了一种新的基于事件触发通信的DIGing算法。此算法在强凸目标函数的条件下能够收敛到全局最优解，在理论上避免了既有触发机制参数选择困难等问题，具有参数选择简单易行的优点，且在一定程度上降低了通信负担。 针对有向强连通网络下的场景，我将上述事件触发机制拓展应用到了Push-DIGing算法，设计了一种全新的基于事件触发通信的Push-DIGing算法。此算法在强凸目标函数的条件下能够收敛到全局最优解，且相较于原始的Push-DIGing算法显著降低了通信率。最终我的研究成果获得了华南理工大学优秀毕业论文。</p>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        <section>
-          <h2>工作经历</h2>
-          <div class="tab-shell" data-tabs>
-            <div class="tab-strip" role="tablist" aria-label="工作经历">
-              <button class="tab-button" type="button" role="tab" aria-selected="true" aria-controls="work-1" id="work-tab-1">
-                <span class="tab-title">华为技术有限公司</span>
-                <span class="tab-time">2026/03 - 至今</span>
-              </button>
-              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="work-2" id="work-tab-2">
-                <span class="tab-title">广州智用人工智能研究院</span>
-                <span class="tab-time">2025/11 - 2026/01</span>
-              </button>
-              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="work-3" id="work-tab-3">
-                <span class="tab-title">上海泰雷兹智能卡技术有限公司</span>
-                <span class="tab-time">2024/11 - 2025/03</span>
-              </button>
+          <section class="tab-panel" role="tabpanel" id="part-projects" aria-labelledby="part-tab-projects">
+            <h2>项目经历</h2>
+            <div class="entry-list">
+              <article class="entry">
+                <div class="entry-time">2026/05 - 至今</div>
+                <div>
+                  <div class="panel-head">
+                    <h3>Golden Template 网络配置智能校验运维系统</h3>
+                    <span class="side-note">方向：LLM Agent</span>
+                  </div>
+                  <p>Golden Template 是华为面向网络配置智能校验与运维场景打造的平台，旨在通过规则化、自动化的方式提升网络配置检查效率与运维质量。本人为系统设计并打造了 Nora 智能助手（Network Orchestration & Rules Agent）。Nora 基于自然语言理解能力，能够将用户的运维诉求自动解析为结构化规则，支持规则的生成、修改、保存、管理与调用，并可联动系统内既有资源完成配置校验任务。该助手显著降低了网络工程师编写校验规则、执行配置检查和维护规则资产的复杂度，提升了平台的易用性与自动化水平。</p>
+                </div>
+              </article>
+              <article class="entry">
+                <div class="entry-time">2026/03 - 2026/05</div>
+                <div>
+                  <div class="panel-head">
+                    <h3>基于Agentic RAG的网络配置翻译与生成系统</h3>
+                    <span class="side-note">方向：LLM Agent</span>
+                  </div>
+                  <p>作为团队核心成员，为配置翻译与生成场景打造了一套超高准确度的agentic RAG工具，用于华为与思科设备等配置命令手册检索与生成，实测检索准确率超过98%，远高于传统基于embedding的检索（准确度低于90%，完全无法处理相似的命令），目前该系统硬件在Cisco to huawei配置文件翻译，路由网络配置文件生成，故障注入，网络世界模型等项目中上线应用。</p>
+                </div>
+              </article>
+              <article class="entry">
+                <div class="entry-time">2026/03 - 2026/04</div>
+                <div>
+                  <div class="panel-head">
+                    <h3>基于multi-agent的竞品对比分析系统</h3>
+                    <span class="side-note">方向：LLM Agent</span>
+                  </div>
+                  <p>本人设计并实现了一个面向通用市场情报研究的多 Agent 竞品分析平台，支持用户输入品类与分析目标后，自动完成任务理解、竞品发现、信息源规划、网页搜索与抓取、结构化信息抽取、证据链构建、多维竞品分析、质量审查和报告生成。支持DAG 可视化、证据库、报告编辑与导出。实现了一个可追溯、可复核、可导出的自动化竞品分析与对比流程。</p>
+                </div>
+              </article>
+              <article class="entry">
+                <div class="entry-time">2024/10-2025/6</div>
+                <div>
+                  <div class="panel-head">
+                    <h3>事件触发通信下的分布式优化研究</h3>
+                    <span class="side-note">方向：优化理论</span>
+                  </div>
+                  <p>重点研究了分布式梯度跟踪方法。针对无向连通网络下的DIGing算法，我提出了一种改进型事件触发机制，得到了一种新的基于事件触发通信的DIGing算法。此算法在强凸目标函数的条件下能够收敛到全局最优解，在理论上避免了既有触发机制参数选择困难等问题，具有参数选择简单易行的优点，且在一定程度上降低了通信负担。 针对有向强连通网络下的场景，我将上述事件触发机制拓展应用到了Push-DIGing算法，设计了一种全新的基于事件触发通信的Push-DIGing算法。此算法在强凸目标函数的条件下能够收敛到全局最优解，且相较于原始的Push-DIGing算法显著降低了通信率。最终我的研究成果获得了华南理工大学优秀毕业论文。</p>
+                </div>
+              </article>
             </div>
-            <div class="tab-panel active block" role="tabpanel" id="work-1" aria-labelledby="work-tab-1">
-              <div class="panel-head">
-                <h3>华为技术有限公司</h3>
-                <span class="side-note">职位：AI工程师（agent方向）</span>
-              </div>
-              <p><span class="label">公司介绍：</span>华为ict bg, 网络孪生仿真实验室，lab主要研究方向为通信网络agent。</p>
-              <p><span class="label">工作内容：</span>主要工作内容为研究LLM技术在通信网络中的工程应用，包括但不限于配置翻译，配置生成，智能校验与运维，网络世界模型等领域，目前本人打造的多套LLM Agent已投入使用，效果良好，大大降低了一线网络工程师的工作负荷，提升了工作效率。</p>
-            </div>
-            <div class="tab-panel block" role="tabpanel" id="work-2" aria-labelledby="work-tab-2">
-              <div class="panel-head">
-                <h3>广州智用人工智能研究院</h3>
-                <span class="side-note">职位：LLM应用工程师</span>
-              </div>
-              <p><span class="label">公司介绍：</span>公司主营业务为to B的LLM agent。</p>
-              <p><span class="label">工作内容：</span>主要工作内容是为agent项目提供技术方案；使用python语言编写demo验证方案可行性；商用agent开发。工作期间自主完成了基于vl模型的表格内容提取agent和图片翻译agent（any to Chinese），印式英语/中文的tts/stt agent等多个项目。</p>
-            </div>
-            <div class="tab-panel block" role="tabpanel" id="work-3" aria-labelledby="work-tab-3">
-              <div class="panel-head">
-                <h3>上海泰雷兹智能卡技术有限公司</h3>
-                <span class="side-note">职位：RPA工程师</span>
-              </div>
-              <p><span class="label">公司介绍：</span>法国THALES集团的中国分公司，负责智能卡业务。</p>
-              <p><span class="label">工作内容：</span>主要工作为机器人流程自动化（RPA）开发，工作期间我协调了相关部门的需求，为公司设计了四套RPA程序，并对应修改和优化了数据库的业务逻辑，用于Oracle系统的自动查找数据，填写和下载WorkOrder，BOM Routing等任务。避免了大量重复性人工操作也降低了人工操作可能产生的错误，提升了公司的生产管理效率。</p>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        <section>
-          <h2>技能</h2>
-          <ul class="skill-list">
-            <li><span class="label">专业知识：</span><span>掌握数学（优化理论，微积分，代数），统计（概率论与数理统计，回归分析，统计推断），计算机（数据结构与算法，计网，微机原理）相关基础知识</span></li>
-            <li><span class="label">专业技能：</span><span>精通深度学习，llm与agent理论知识，熟悉基于transformer的GPT，BERT，DeepSeek等模型原理及ReAct，workflow，harness等agent基础知识，熟悉Linux基本操作，熟悉conda，ssh，git等环境管理</span></li>
-            <li><span class="label">编程语言：</span><span>擅长Python语言，熟练使用langchain，pytorch，numpy等库进行编程，具有良好的编程习惯，有模型训练，微调经验，agent开发实践经验；熟悉数据库系统，熟练使用SQL语言进行数据库管理；熟悉C++语言</span></li>
-            <li><span class="label">英语:</span><span>IELTS ACADEMIC：7.0分；CET 6：582分</span></li>
-          </ul>
-        </section>
+          <section class="tab-panel" role="tabpanel" id="part-work" aria-labelledby="part-tab-work">
+            <h2>工作经历</h2>
+            <div class="entry-list">
+              <article class="entry">
+                <div class="entry-time">2026/03 - 至今</div>
+                <div class="block">
+                  <div class="panel-head">
+                    <h3>华为技术有限公司</h3>
+                    <span class="side-note">职位：AI工程师（agent方向）</span>
+                  </div>
+                  <p><span class="label">公司介绍：</span>华为ict bg, 网络孪生仿真实验室，lab主要研究方向为通信网络agent。</p>
+                  <p><span class="label">工作内容：</span>主要工作内容为研究LLM技术在通信网络中的工程应用，包括但不限于配置翻译，配置生成，智能校验与运维，网络世界模型等领域，目前本人打造的多套LLM Agent已投入使用，效果良好，大大降低了一线网络工程师的工作负荷，提升了工作效率。</p>
+                </div>
+              </article>
+              <article class="entry">
+                <div class="entry-time">2025/11 - 2026/01</div>
+                <div class="block">
+                  <div class="panel-head">
+                    <h3>广州智用人工智能研究院</h3>
+                    <span class="side-note">职位：LLM应用工程师</span>
+                  </div>
+                  <p><span class="label">公司介绍：</span>公司主营业务为to B的LLM agent。</p>
+                  <p><span class="label">工作内容：</span>主要工作内容是为agent项目提供技术方案；使用python语言编写demo验证方案可行性；商用agent开发。工作期间自主完成了基于vl模型的表格内容提取agent和图片翻译agent（any to Chinese），印式英语/中文的tts/stt agent等多个项目。</p>
+                </div>
+              </article>
+              <article class="entry">
+                <div class="entry-time">2024/11 - 2025/03</div>
+                <div class="block">
+                  <div class="panel-head">
+                    <h3>上海泰雷兹智能卡技术有限公司</h3>
+                    <span class="side-note">职位：RPA工程师</span>
+                  </div>
+                  <p><span class="label">公司介绍：</span>法国THALES集团的中国分公司，负责智能卡业务。</p>
+                  <p><span class="label">工作内容：</span>主要工作为机器人流程自动化（RPA）开发，工作期间我协调了相关部门的需求，为公司设计了四套RPA程序，并对应修改和优化了数据库的业务逻辑，用于Oracle系统的自动查找数据，填写和下载WorkOrder，BOM Routing等任务。避免了大量重复性人工操作也降低了人工操作可能产生的错误，提升了公司的生产管理效率。</p>
+                </div>
+              </article>
+            </div>
+          </section>
 
-        <section>
-          <h2>获奖记录</h2>
-          <ul class="award-list">
-            <li>2024 MCM（美国大学生数学建模竞赛）: Finalist (全球前2%)</li>
-            <li>2025 华南理工大学校级优秀毕业论文（全校1%）</li>
-            <li>2025 华南理工大学“遇见小面创新奖学金”学生科技创新竞赛奖学金 一等奖（全校1%）</li>
-            <li>2023 广州高校数学建模联赛：一等奖（第一名）</li>
-            <li>其他数学建模，奖学金，优干等奖项若干</li>
-          </ul>
-        </section>
+          <section class="tab-panel" role="tabpanel" id="part-skills" aria-labelledby="part-tab-skills">
+            <h2>技能</h2>
+            <ul class="skill-list">
+              <li><span class="label">专业知识：</span><span>掌握数学（优化理论，微积分，代数），统计（概率论与数理统计，回归分析，统计推断），计算机（数据结构与算法，计网，微机原理）相关基础知识</span></li>
+              <li><span class="label">专业技能：</span><span>精通深度学习，llm与agent理论知识，熟悉基于transformer的GPT，BERT，DeepSeek等模型原理及ReAct，workflow，harness等agent基础知识，熟悉Linux基本操作，熟悉conda，ssh，git等环境管理</span></li>
+              <li><span class="label">编程语言：</span><span>擅长Python语言，熟练使用langchain，pytorch，numpy等库进行编程，具有良好的编程习惯，有模型训练，微调经验，agent开发实践经验；熟悉数据库系统，熟练使用SQL语言进行数据库管理；熟悉C++语言</span></li>
+              <li><span class="label">英语:</span><span>IELTS ACADEMIC：7.0分；CET 6：582分</span></li>
+            </ul>
+          </section>
+
+          <section class="tab-panel" role="tabpanel" id="part-awards" aria-labelledby="part-tab-awards">
+            <h2>获奖记录</h2>
+            <ul class="award-list">
+              <li>2024 MCM（美国大学生数学建模竞赛）: Finalist (全球前2%)</li>
+              <li>2025 华南理工大学校级优秀毕业论文（全校1%）</li>
+              <li>2025 华南理工大学“遇见小面创新奖学金”学生科技创新竞赛奖学金 一等奖（全校1%）</li>
+              <li>2023 广州高校数学建模联赛：一等奖（第一名）</li>
+              <li>其他数学建模，奖学金，优干等奖项若干</li>
+            </ul>
+          </section>
+        </div>
       </article>
     </main>
     <script>
